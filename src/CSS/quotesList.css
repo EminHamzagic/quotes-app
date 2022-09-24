@@ -1,0 +1,13 @@
+.quoteListContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.quoteListContainer h1 {
+  color: white;
+  font-size: 44px;
+  font-weight: 500;
+}

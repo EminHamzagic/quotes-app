@@ -12,10 +12,11 @@ export default function Header() {
       {isUserLogged() && (
         <button
           onClick={() => {
+            window.history.pushState("", "", "http://localhost:3000/login");
             dispatchUserState({ type: "clearToken" });
           }}
         >
-          <Link style={{ color: "white", textDecoration: "none" }} to="/">
+          <Link style={{ color: "white", textDecoration: "none" }} to="/login">
             Logout
           </Link>
         </button>

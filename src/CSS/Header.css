@@ -6,7 +6,7 @@
   justify-content: flex-end;
 }
 
-button {
+.header button {
   width: 100px;
   font-size: 20px;
   border: none;
@@ -14,4 +14,9 @@ button {
   cursor: pointer;
   margin-left: 5px;
   background-color: transparent;
+  transition: 0.4s ease all;
+}
+
+.header button:hover {
+  background-color: rgb(47, 47, 66);
 }

@@ -34,4 +34,10 @@
   border-radius: 8px;
   margin: 0;
   margin-top: 15px;
+  font-size: 22px;
+}
+
+.loginContainer button:focus {
+  outline: none;
+  background-color: rgb(221, 221, 221);
 }

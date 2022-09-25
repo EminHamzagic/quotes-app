@@ -24,6 +24,10 @@
 .quoteScoreContainer {
   width: 20%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .icon {
@@ -34,4 +38,14 @@
 
 .icon:hover {
   color: rgb(141, 141, 141);
+}
+
+.votes {
+  color: white;
+  font-size: 12px;
+}
+
+.percentage {
+  font-size: 20px;
+  font-weight: 600;
 }

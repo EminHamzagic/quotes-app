@@ -9,6 +9,7 @@ import Quote from "./Quote";
 export default function QuoteList() {
   const [quoteArray, setQuoteArray] = useState([]);
   const { userState } = useContext(UserContext);
+  var showAddBox = false;
 
   useEffect(() => {
     axios

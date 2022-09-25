@@ -7,7 +7,7 @@
 }
 
 .header button {
-  width: 100px;
+  width: 110px;
   font-size: 20px;
   border: none;
   color: white;
@@ -19,4 +19,54 @@
 
 .header button:hover {
   background-color: rgb(47, 47, 66);
+}
+
+.addQuoteBox {
+  position: absolute;
+  left: 20%;
+  top: 10vh;
+  width: 60%;
+  height: 80vh;
+  background-color: white;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.addQuoteBox label {
+  font-size: 20px;
+}
+
+.addQuoteBox input[type="text"] {
+  width: 25%;
+  height: 30px;
+  padding-left: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.addQuoteBox input[type="checkbox"] {
+  margin-right: 2px;
+}
+
+.addQuoteBox textarea {
+  margin-top: 10px;
+  width: 45%;
+  height: 100px;
+  resize: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.tagsContainer {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  height: 20%;
 }

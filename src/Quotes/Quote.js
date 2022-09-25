@@ -6,7 +6,7 @@ export default function Quote({ props }) {
   // console.log(props);
   return (
     <div className="quoteContainer">
-      <QuoteScore />
+      <QuoteScore data={props} />
       <QuoteBody data={props} />
     </div>
   );

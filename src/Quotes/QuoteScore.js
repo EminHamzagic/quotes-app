@@ -38,9 +38,11 @@ export default function QuoteScore({ data }) {
       </p>
       <p
         className="percentage"
-        style={{ color: `hsl(${percentage}, 100%, 50%)` }}
+        style={{
+          color: `hsl(${percentage ? percentage : "100"}, 100%, 50%)`,
+        }}
       >
-        {percentage}%
+        {percentage ? percentage : "0"}%
       </p>
       <p className="votes">{data.upvotesCount + " / " + data.downvotesCount}</p>
       <p

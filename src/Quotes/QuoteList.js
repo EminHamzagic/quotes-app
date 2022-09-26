@@ -8,8 +8,7 @@ import Quote from "./Quote";
 
 export default function QuoteList() {
   const [quoteArray, setQuoteArray] = useState([]);
-  const { userState } = useContext(UserContext);
-  var showAddBox = false;
+  const { userState, addedNewQuote } = useContext(UserContext);
 
   useEffect(() => {
     axios
@@ -20,7 +19,7 @@ export default function QuoteList() {
         setQuoteArray(data.quotes);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [addedNewQuote]);
 
   return (
     <div className="quoteListContainer">

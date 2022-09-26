@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { createContext } from "react";
 import userReducer from "../Reducers/userReducer";
 
@@ -9,11 +9,19 @@ export default function UserContextProvider({ children }) {
     accessToken: null,
   });
 
+  const [addedNewQuote, setAddedNewQuote] = useState(false);
+
   const isUserLogged = () => userState.accessToken;
 
   return (
     <UserContext.Provider
-      value={{ userState, dispatchUserState, isUserLogged }}
+      value={{
+        userState,
+        dispatchUserState,
+        isUserLogged,
+        addedNewQuote,
+        setAddedNewQuote,
+      }}
     >
       {children}
     </UserContext.Provider>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { UserContext } from "../Contexts/UserContext";
 
 export default function AddQuote() {
@@ -10,8 +10,10 @@ export default function AddQuote() {
   const [quoteData, setQuoteData] = useState({
     content: "",
     author: "",
-    tags: [],
   });
+
+  const checkBoxRef = useRef();
+
   useEffect(() => {
     if (isUserLogged()) {
       const config = {
@@ -25,8 +27,10 @@ export default function AddQuote() {
   }, [userState]);
 
   const handleChecked = (event) => {
-    if (event.target.checked) setAddTags([...addTags, event.target.id]);
-    else setAddTags(addTags.filter((tag) => tag !== event.target.id));
+    if (event.target.checked) {
+      if (addTags.length === 0) setAddTags([event.target.id]);
+      else setAddTags((prevTags) => [...prevTags, event.target.id]);
+    } else setAddTags(addTags.filter((tag) => tag !== event.target.id));
   };
 
   return (
@@ -58,6 +62,7 @@ export default function AddQuote() {
                   onChange={(e) => {
                     handleChecked(e);
                   }}
+                  ref={checkBoxRef}
                   type="checkbox"
                 />
                 <label htmlFor={tag}>{tag}</label>
@@ -68,16 +73,24 @@ export default function AddQuote() {
         <button
           style={{ backgroundColor: "rgb(47, 47, 66)" }}
           onClick={() => {
-            setQuoteData({ ...quoteData, tags: addTags });
             axios
-              .post("http://localhost:4000/quotes", quoteData, {
-                headers: {
-                  Authorization: "Bearer " + userState.accessToken.toString(),
+              .post(
+                "http://localhost:4000/quotes",
+                {
+                  content: quoteData.content,
+                  author: quoteData.author,
+                  tags: addTags,
                 },
-              })
+                {
+                  headers: {
+                    Authorization: "Bearer " + userState.accessToken.toString(),
+                  },
+                }
+              )
               .then(() => {
                 setAddedNewQuote((prev) => !prev);
                 setShowAddBox(!showAddBox);
+                checkBoxRef.current.checked = false;
               });
           }}
         >

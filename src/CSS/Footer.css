@@ -1,0 +1,27 @@
+.footer {
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer button {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s all ease;
+}
+
+.footer button:hover {
+  background-color: rgb(84, 84, 143);
+}
+
+.footer button:focus {
+  outline: none;
+}

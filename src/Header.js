@@ -2,6 +2,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AddQuote from "./AddQuote/AddQuote";
+import SortByButton from "./Components/SortBy/SortByButton";
 import { UserContext } from "./Contexts/UserContext";
 import "./Css/Header.css";
 
@@ -19,6 +20,7 @@ export default function Header() {
 
   return (
     <div className="header">
+      {isUserLogged() && <SortByButton />}
       {isUserLogged() && <AddQuote />}
       {isUserLogged() && (
         <button

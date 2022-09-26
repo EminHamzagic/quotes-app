@@ -11,7 +11,7 @@
   height: 100%;
   background-color: white;
   border-radius: 8px;
-  padding: 10px 15px 10px 15px;
+  padding: 15px 15px 15px 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -19,6 +19,8 @@
 
 .quoteBody p:nth-child(2) {
   align-self: flex-end;
+  font-weight: 300;
+  font-size: 15px;
 }
 
 .quoteScoreContainer {

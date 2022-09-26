@@ -9,6 +9,7 @@ import Quote from "./Quote";
 export default function QuoteList() {
   const [quoteArray, setQuoteArray] = useState([]);
   const { userState, addedNewQuote } = useContext(UserContext);
+  const [changedScore, setChangedScore] = useState(false);
 
   useEffect(() => {
     axios
@@ -19,13 +20,19 @@ export default function QuoteList() {
         setQuoteArray(data.quotes);
       })
       .catch((err) => console.log(err));
-  }, [addedNewQuote]);
+  }, [addedNewQuote, changedScore]);
 
   return (
     <div className="quoteListContainer">
       <h1 style={{ marginBottom: "80px" }}>Quotes</h1>
-      {quoteArray.map((quote) => {
-        return <Quote key={quote.id} props={quote} />;
+      {quoteArray.map((quote, i) => {
+        return (
+          <Quote
+            key={quote.id + i.toString()}
+            updateScr={setChangedScore}
+            props={quote}
+          />
+        );
       })}
     </div>
   );

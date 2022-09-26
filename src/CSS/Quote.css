@@ -31,13 +31,12 @@
 }
 
 .icon {
-  color: rgb(104, 104, 104);
   transition: 0.4s all ease;
   cursor: pointer;
 }
 
 .icon:hover {
-  color: rgb(141, 141, 141);
+  color: rgb(165, 165, 165);
 }
 
 .votes {

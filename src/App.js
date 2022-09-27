@@ -2,7 +2,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import "./Css/App.css";
 import Header from "./Header";
 import QuoteList from "./Components/Quotes/QuoteList";
-import Login from "./Login/Login";
+import Login from "./Components/Login/Login";
 import { useContext, useState } from "react";
 import { UserContext } from "./Contexts/UserContext";
 import Footer from "./Footer";

@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useState, useContext } from "react";
-import { UserContext } from "../Contexts/UserContext";
-import "../Css/Login.css";
+import { UserContext } from "../../Contexts/UserContext";
+import "../../Css/Login.css";
 
 export default function Login() {
-  const { userState, dispatchUserState } = useContext(UserContext);
+  const { dispatchUserState } = useContext(UserContext);
   const [loginData, setLoginData] = useState({ username: "", password: "" });
 
   const submitLogin = () => {

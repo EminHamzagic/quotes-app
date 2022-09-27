@@ -1,25 +1,17 @@
-import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-import AddQuote from "./AddQuote/AddQuote";
+import AddQuote from "./Components/AddQuote/AddQuote";
+import FilterQuotesBtn from "./Components/FilterQuotes/FilterQuotesBtn";
 import SortByButton from "./Components/SortBy/SortByButton";
 import { UserContext } from "./Contexts/UserContext";
 import "./Css/Header.css";
 
 export default function Header() {
-  const { userState, isUserLogged, dispatchUserState } =
-    useContext(UserContext);
-  const [showAddBox, setShowAddBox] = useState(false);
-  const [tagList, setTagList] = useState([]);
-  const [addTags, setAddTags] = useState([]);
-  const [quoteData, setQuoteData] = useState({
-    content: "",
-    author: "",
-    tags: [],
-  });
+  const { isUserLogged, dispatchUserState } = useContext(UserContext);
 
   return (
     <div className="header">
+      {isUserLogged() && <FilterQuotesBtn />}
       {isUserLogged() && <SortByButton />}
       {isUserLogged() && <AddQuote />}
       {isUserLogged() && (

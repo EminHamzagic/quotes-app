@@ -13,11 +13,12 @@ export default function QuoteList() {
   const [changedScore, setChangedScore] = useState(false);
 
   const { page, setPagesNum } = useContext(PageContext);
+  const { sortBy, sortDir, filterTags } = useContext(UserContext);
 
   useEffect(() => {
     axios
       .get(
-        `http://localhost:4000/quotes?pageSize=5&page=${page}&sortBy=""&sortDirection=""`,
+        `http://localhost:4000/quotes?pageSize=5&page=${page}&sortBy=${sortBy}&sortDirection=${sortDir}&tags=${filterTags.toString()}`,
         {
           headers: { Authorization: "Bearer " + userState.accessToken },
         }
@@ -27,7 +28,7 @@ export default function QuoteList() {
         setQuoteArray(data.quotes);
       })
       .catch((err) => console.log(err));
-  }, [addedNewQuote, changedScore, page]);
+  }, [addedNewQuote, changedScore, page, sortBy, sortDir, filterTags]);
 
   return (
     <div className="quoteListContainer">

@@ -1,0 +1,43 @@
+.sortContainer {
+  width: 350px;
+  height: 200px;
+  position: absolute;
+  display: none;
+  top: 8%;
+  left: 800px;
+  background-color: rgb(47, 47, 66);
+  border-radius: 10px;
+  cursor: default;
+}
+
+.sortBtn:hover .sortContainer {
+  display: flex;
+}
+
+.sortContainer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  padding: 5px;
+  /* height: 100%; */
+  margin-top: 10px;
+}
+
+.sortContainer div div {
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 0;
+  /* height: 100%; */
+}
+
+.sortContainer div div input {
+  margin-right: 10px;
+}
+
+.sortContainer input,
+label {
+  cursor: pointer;
+}

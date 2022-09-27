@@ -32,10 +32,20 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  background-color: rgb(47, 47, 66);
+  box-shadow: 3px 3px 5px black;
 }
 
 .addQuoteBox label {
   font-size: 20px;
+  color: white;
+}
+
+.addQuoteBox button {
+  border: 1px solid white;
+  height: 50px;
+  width: 130px;
+  border-radius: 8px;
 }
 
 .addQuoteBox input[type="text"] {
@@ -43,10 +53,16 @@
   height: 30px;
   padding-left: 10px;
   border-radius: 8px;
-  border: 1px solid grey;
+  border: 1px solid white;
+  background-color: rgb(47, 47, 66);
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 15px;
+  color: white;
+}
+
+.addQuoteBox input[type="text"]:focus {
+  outline: none;
 }
 
 .addQuoteBox input[type="checkbox"] {
@@ -61,6 +77,13 @@
   padding: 10px;
   font-size: 15px;
   border-radius: 8px;
+  background-color: rgb(47, 47, 66);
+  border: 1px solid white;
+  color: white;
+}
+
+.addQuoteBox textarea:focus {
+  outline: none;
 }
 
 .tagsContainer {

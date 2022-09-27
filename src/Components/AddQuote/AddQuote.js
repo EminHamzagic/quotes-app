@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useContext, useEffect, useRef, useState } from "react";
-import { UserContext } from "../Contexts/UserContext";
+import { UserContext } from "../../Contexts/UserContext";
 
 export default function AddQuote() {
-  const { userState, isUserLogged, setAddedNewQuote } = useContext(UserContext);
+  const { userState, isUserLogged, setAddedNewQuote, setTagsList } =
+    useContext(UserContext);
   const [showAddBox, setShowAddBox] = useState(false);
   const [tagList, setTagList] = useState([]);
   const [addTags, setAddTags] = useState([]);
@@ -19,14 +20,15 @@ export default function AddQuote() {
       const config = {
         headers: { Authorization: "Bearer " + userState.accessToken },
       };
-      console.log(config);
-      axios
-        .get("http://localhost:4000/tags", config)
-        .then((data) => setTagList(data.data));
+      axios.get("http://localhost:4000/tags", config).then((data) => {
+        setTagList(data.data);
+        setTagsList(data.data);
+      });
     }
   }, [userState]);
 
   const handleChecked = (event) => {
+    console.log(checkBoxRef.current.checked);
     if (event.target.checked) {
       if (addTags.length === 0) setAddTags([event.target.id]);
       else setAddTags((prevTags) => [...prevTags, event.target.id]);

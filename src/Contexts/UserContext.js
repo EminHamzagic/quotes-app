@@ -9,7 +9,13 @@ export default function UserContextProvider({ children }) {
     accessToken: null,
   });
 
+  const [sortBy, setSortBy] = useState("");
+  const [sortDir, setSortDir] = useState("");
+
+  const [tagsList, setTagsList] = useState([]);
+
   const [addedNewQuote, setAddedNewQuote] = useState(false);
+  const [filterTags, setFilterTags] = useState([]);
 
   const isUserLogged = () => userState.accessToken;
 
@@ -21,6 +27,14 @@ export default function UserContextProvider({ children }) {
         isUserLogged,
         addedNewQuote,
         setAddedNewQuote,
+        sortBy,
+        sortDir,
+        setSortDir,
+        setSortBy,
+        tagsList,
+        setTagsList,
+        filterTags,
+        setFilterTags,
       }}
     >
       {children}

@@ -1,0 +1,33 @@
+.filterContainer {
+  position: absolute;
+  top: 8%;
+  right: 265px;
+  width: 250px;
+  height: 500px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+  background-color: rgb(47, 47, 66);
+  cursor: default;
+}
+
+.filterBtn:hover .filterContainer {
+  display: flex;
+}
+
+.filterContainer div {
+  display: flex;
+  width: 80%;
+  justify-content: flex-start;
+}
+
+.filterContainer div input {
+  margin-right: 10px;
+}
+
+.filterContainer div input,
+label {
+  cursor: pointer;
+}

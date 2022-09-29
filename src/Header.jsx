@@ -11,22 +11,26 @@ export default function Header() {
 
   return (
     <div className="header">
-      {isUserLogged() && <FilterQuotesBtn />}
-      {isUserLogged() && <SortByButton />}
-      {isUserLogged() && <AddQuote />}
-      {isUserLogged() && (
-        <button
-          onClick={() => {
-            window.history.pushState("", "", "http://localhost:3000/login");
-            dispatchUserState({ type: "clearToken" });
-          }}
-        >
-          <Link style={{ color: "white", textDecoration: "none" }} to="/login">
-            Logout
-          </Link>
-        </button>
-      )}
-      {!isUserLogged() && (
+      {isUserLogged() ? (
+        <>
+          <FilterQuotesBtn />
+          <SortByButton />
+          <AddQuote />
+          <button
+            onClick={() => {
+              window.history.pushState("", "", "http://localhost:3000/login");
+              dispatchUserState({ type: "clearToken" });
+            }}
+          >
+            <Link
+              style={{ color: "white", textDecoration: "none" }}
+              to="/login"
+            >
+              Logout
+            </Link>
+          </button>
+        </>
+      ) : (
         <button>
           <Link style={{ color: "white", textDecoration: "none" }} to="/login">
             Login

@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretUp, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import { UserContext } from "../../Contexts/UserContext";
+import axios from "axios";
 
 export default function QuoteScore({ data, setScr }) {
   const { userState } = useContext(UserContext);

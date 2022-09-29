@@ -28,7 +28,6 @@ export default function AddQuote() {
   }, [userState]);
 
   const handleChecked = (event) => {
-    console.log(checkBoxRef.current.checked);
     if (event.target.checked) {
       if (addTags.length === 0) setAddTags([event.target.id]);
       else setAddTags((prevTags) => [...prevTags, event.target.id]);
@@ -85,7 +84,7 @@ export default function AddQuote() {
                 },
                 {
                   headers: {
-                    Authorization: "Bearer " + userState.accessToken.toString(),
+                    Authorization: "Bearer " + userState.accessToken,
                   },
                 }
               )

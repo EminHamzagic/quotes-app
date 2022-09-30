@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# This is the project for the Course end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project containes folders for API and CLIENT. You only need to modify the client side of the project.
+Open VS Code of the client folder and create the app for the Test.pdf requirements.
 
-## Available Scripts
+# Run the API app
 
-In the project directory, you can run:
+## Open an VS Code instance of the api folder
 
-### `npm start`
+### Install packages:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    npm i
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Run the project:
 
-### `npm test`
+    node index.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Open an VS Code instance of the client folder
 
-### `npm run build`
+### Install packages:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    npm i
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Run the project:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    npm start
 
-### `npm run eject`
+# Additional tasks:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 1. Create Login page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Login page in which you have two inputs (username, password) and a submit button.
+Users you can login with:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    {
+        username: "fazi",
+        password: "1234",
+    },
+    {
+        username: "pera",
+        password: "1234",
+    },
+    {
+        username: "mika",
+        password: "1234",
+    },
+    {
+        username: "zika",
+        password: "1234",
+    }
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Make Login request
 
-## Learn More
+    Post http://localhost:8000/sessions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Request body:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    {
+        "username":"zika",
+        "password": "1234"
+    }
 
-### Code Splitting
+### Request response:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    {
+        "accessToken": "yuim98oq-e275-45a2-bc2e-b3098036d655"
+    }
 
-### Analyzing the Bundle Size
+## 2. Add Logout button on the quotes page
+## 3. Create logout logic on the logout button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Requests that require access token in the header:
 
-### Making a Progressive Web App
+    GET http://localhost:8000/tags
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    GET http://localhost:8000/quotes
 
-### Advanced Configuration
+    GET http://localhost:8000/quotes/:id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    POST http://localhost:8000/quotes
 
-### Deployment
+    POST http://localhost:8000/quotes/:id/upvote
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    DELETE http://localhost:8000/quotes/:id/upvote
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    POST http://localhost:8000/quotes/:id/downvote
+    
+    DELETE http://localhost:8000/quotes/:id/downvote

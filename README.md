@@ -5,7 +5,7 @@ Open VS Code of the client folder and create the app for the Test.pdf requiremen
 
 # Run the API app
 
-## Open an VS Code instance of the api folder
+## Open an VS Code instance of the Quotes project and a terminal for example for api folder
 
 ### Install packages:
 

@@ -1,8 +1,3 @@
-# This is the project for the Course end
-
-Project containes folders for API and CLIENT. You only need to modify the client side of the project.
-Open VS Code of the client folder and create the app for the Test.pdf requirements.
-
 # Run the API app
 
 ## Open an VS Code instance of the quotes-app folder and a terminal for example for the api folder

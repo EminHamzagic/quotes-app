@@ -25,8 +25,9 @@ export default function QuoteScore({ data, setScr }) {
   };
 
   const vote = (type) => {
-    console.log(data.tags);
-    if (data.givenVote === "upvote" && type === "downvote") {
+    if (data.givenVote === type) {
+      deleteVote(type).then(() => setScr((prev) => !prev));
+    } else if (data.givenVote === "upvote" && type === "downvote") {
       deleteVote("upvote").then(() =>
         addVote("downvote").then(() => setScr((prev) => !prev))
       );

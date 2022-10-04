@@ -1,12 +1,10 @@
-# Run the API app
-
 ## Open an VS Code instance of the quotes-app folder and a terminal for example for the api folder
 
 ### Install packages:
 
     npm i
 
-### Run the project:
+### Run the api:
 
     node index.js
 
